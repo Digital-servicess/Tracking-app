@@ -3,10 +3,6 @@ steps:
    entrypoint: npm
    args: [ 'install']
    dir: 'track_back_end'
- - name: node
-   entrypoint: npm
-   args: [ 'start']
-   dir: 'track_back_end'
  - name: gcr.io/$PROJECT_ID/firebase
    args: ['deploy','--project=$PROJECT_ID', '--only=hosting']
    dir: 'track_back_end'
