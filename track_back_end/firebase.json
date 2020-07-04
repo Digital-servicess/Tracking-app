@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "public": "track_back_end",
+    "site":"rent2trust-tracking-backend",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
