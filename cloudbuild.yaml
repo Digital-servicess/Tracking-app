@@ -7,8 +7,16 @@ steps:
   args: ['push', 'gcr.io/$PROJECT_ID/trusttrackingapp']
   # deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'trusttrackingapp', '--image', 'gcr.io/$PROJECT_ID/trusttrackingapp:${SHORT_SHA}', '--region', 'us-central1', '--allow-unauthenticated']
-  env:
-  - 'PORT=8080'
+  args:
+   - 'run'
+   - 'deploy'
+   - 'trackappbackend'
+   - '--image'
+   - 'gcr.io/$PROJECT_ID/trusttrackingapp:${SHORT_SHA}'
+   - '--region'
+   - 'asia-east1'
+   - '--platform'
+   - 'managed'
+   - '--allow-unauthenticated'
 images:
 - gcr.io/$PROJECT_ID/trusttrackingapp
